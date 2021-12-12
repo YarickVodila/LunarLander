@@ -31,17 +31,14 @@ public class Ship extends GameObject { //наследуется от GameObject 
     public void update() {
         super.update();
         if(game.pressedKeys.contains(37)&&(fuel>0)){
-            //position.x -= 10;
             vx=vx-0.8;
             fuel--;
         }
         if(game.pressedKeys.contains(39)&&(fuel>0)){
-            //position.x += 10;
             vx=vx+0.8;
             fuel--;
         }
         if(game.pressedKeys.contains(38) &&(fuel>0)){
-            //position.y -= 1;
             vy=vy-0.8;
             fuel--;
         }
@@ -71,19 +68,15 @@ public class Ship extends GameObject { //наследуется от GameObject 
             if ((color.getRed()==255) && (color.getGreen()==0) && (color.getBlue()==0) && vy<=4){
                 status=true;
                 flag=true;
-                //System.out.println(color);
             }
             else if ((color.getRed()==255) && (color.getGreen()==0) && (color.getBlue()==0) && vy>4){
                 status=true;
                 flag=false;
-                //System.out.println(color);
             }
             else if ((color.getRed()==128) && (color.getGreen()==128) && (color.getBlue()==128) || (position.y<0)){
                 status=true;
                 flag=false;
-                //System.out.println(color);
             }
-            //System.out.println(color);
         } catch (AWTException ex) {}
 
     }
